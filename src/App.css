@@ -3,7 +3,7 @@
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
+  animation: App-logo-spin infinite 10s linear;
   height: 80px;
 }
 
@@ -18,8 +18,40 @@
   font-size: 1.5em;
 }
 
+.App-Subtitle {
+  font-size: 1em;
+  font-style: italic;
+}
+
 .App-intro {
   font-size: large;
+}
+
+.body-container {
+  margin: 10px;
+}
+
+.inputButton {
+  margin: 2px;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0066ff;
+  color: white;
+  width: 150px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.inputButton:hover {
+  margin: 2px;
+  padding: 5px;
+  background: #00255e;
+  color: white;
+  width: 150px;
+  height: 25px;
+  cursor: pointer;
 }
 
 @keyframes App-logo-spin {

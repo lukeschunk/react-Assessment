@@ -7,12 +7,12 @@ const app = express()
 app.use( bodyParser.json())
 app.use(cors())
 
-const apiBaseUrl = "api/animals"
+const apiBaseUrl = "/api/animals"
 
 app.post(apiBaseUrl, ac.create)
 app.get(apiBaseUrl, ac.read)
-app.put(`${apiBaseUrl}/:desc`)
-app.delete(`${apiBaseUrl}/:id`)
+app.put(`${apiBaseUrl}/:desc&:id`, ac.update)
+app.delete(`${apiBaseUrl}/:id`, ac.delete)
 
 const port = 3032
 app.listen(port, () => (console.log(`Server is listening on port ${port}.`)))

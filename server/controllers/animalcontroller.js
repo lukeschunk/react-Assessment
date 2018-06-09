@@ -15,8 +15,9 @@ let animals = [
 
 module.exports = {
     create: (req, res) => {
-        let arrLength = animals.length
-        animals.push({name: name, id: arrLength, imageUrl: url, description: desc})
+        let arrLength = animals.length-1
+        let newId = animals[arrLength].id+1
+        animals.push({name: req.body.name, id: newId, imageUrl: req.body.imageUrl, description: 'None.'})
         res.status(200).send(animals)
     },
 
@@ -26,7 +27,8 @@ module.exports = {
 
     update: (req, res) => {
         const updateDesc = req.params.desc
-        const updateIndex = animals.findIndex(x => x.desc == updateDesc)
+        const updateId = req.params.id
+        const updateIndex = animals.findIndex(x => x.id == updateId)
         const keepName = animals[updateIndex].name
         const keepId = animals[updateIndex].id
         const keepImg = animals[updateIndex].imageUrl
